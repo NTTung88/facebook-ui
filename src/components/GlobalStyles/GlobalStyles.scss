@@ -1,0 +1,62 @@
+:root {
+    --primary: #fe2c55;
+    --black: #000;
+    --white: #fff;
+    // --text-color: #333;
+    --web-wash: #18191a;
+    --font-family: 'ProximaNova', sans-serif;
+    //Default layout
+    --default-layout-header-height: 56px;
+    --default-layout-width: 100%;
+    --default-layout-horizontal-spacer: 24px;
+}
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    font-size: 62.5%;
+}
+
+body {
+    font-family: var(--font-family);
+    font-size: 1.6rem;
+    line-height: 1.5;
+    text-rendering: optimizeSpeed;
+    // color: var(--text-color);
+    overflow-y: overlay;
+}
+
+button,
+input,
+[tabindex] {
+    outline: none;
+    border: none;
+}
+a[href] {
+    color: var(--text-color);
+    text-decoration: none;
+}
+// Fonts embeded
+
+body {
+    .tippy-box {
+        background-color: var(--web-wash);
+        font-size: 1.6rem;
+        font-weight: 600;
+        border-radius: 8px;
+        line-height: 2.2rem;
+    }
+    .tippy-arrow {
+        color: #333;
+    }
+
+    .tippy-content {
+        padding: 8px 9px;
+    }
+    .tippy-box[data-placement^='bottom'] > .tippy-arrow:before {
+        top: -8px;
+    }
+}
