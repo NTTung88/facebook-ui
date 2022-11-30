@@ -21,10 +21,16 @@ import {
 import config from '~/config';
 
 import styles from './Header.module.scss';
-import Menu, { MenuItem } from './Menu';
+import MenuNav, { MenuNavItem } from './MenuNav';
+import Menu from '~/components/Popper/Menu';
+import { useState } from 'react';
 const cx = classNames.bind(styles);
 
 function Header() {
+    const [show, setShow] = useState(false);
+    const handleMenu = () => {
+        setShow(!show);
+    };
     return (
         <header className={cx('container')}>
             <div className={cx('content')}>
@@ -41,48 +47,50 @@ function Header() {
                 </div>
 
                 <div className={cx('section2')}>
-                    <Menu>
-                        <MenuItem
+                    <MenuNav>
+                        <MenuNavItem
                             title="Home"
                             to={config.routes.home}
                             icon={<HomeIcon />}
                             activeIcon={<HomeActiveIcon />}
                         />
-                        <MenuItem
+                        <MenuNavItem
                             title="Watch"
                             to={config.routes.watch}
                             icon={<WatchIcon />}
                             activeIcon={<WatchActiveIcon />}
                         />
-                        <MenuItem
+                        <MenuNavItem
                             title="Marketplace"
                             to={config.routes.marketplace}
                             icon={<MarketplaceIcon />}
                             activeIcon={<MarketplaceActiveIcon />}
                         />
-                        <MenuItem
+                        <MenuNavItem
                             title="Group"
                             to={config.routes.group}
                             icon={<GroupIcon />}
                             activeIcon={<GroupActiveIcon />}
                         />
-                        <MenuItem
+                        <MenuNavItem
                             title="Game"
                             to={config.routes.game}
                             icon={<GameIcon />}
                             activeIcon={<GameActiveIcon />}
                         />
-                    </Menu>
+                    </MenuNav>
                 </div>
 
                 <div className={cx('section3')}>
                     <Tippy className={cx('action-tippy')} delay={(0, 200)} content="Menu" placement="bottom">
-                        <button className={cx('s3-action-btn')}>
+                        <button className={cx('s3-action-btn')} onClick={handleMenu}>
                             <span className={cx('icon-btn')}>
                                 <MenuIcon />
                             </span>
+                            {show && <Menu />}
                         </button>
                     </Tippy>
+
                     <Tippy className={cx('action-tippy')} delay={(0, 200)} content="Messages" placement="bottom">
                         <button className={cx('s3-action-btn')}>
                             <span className={cx('icon-btn')}>
