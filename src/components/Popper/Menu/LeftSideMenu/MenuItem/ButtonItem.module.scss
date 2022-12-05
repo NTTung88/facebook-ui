@@ -1,0 +1,84 @@
+.header-menu {
+    padding: 16px 0;
+    font-size: 24px;
+    justify-content: left;
+}
+.label {
+    position: relative;
+
+    width: 330px;
+
+    left: 5px;
+    top: 20px;
+    font-family: inherit;
+    text-align: left;
+    font-size: 1.7rem;
+    font-weight: 700;
+    margin: 8px;
+    color: #e4e6eb;
+}
+
+.btn-action {
+    position: relative;
+    width: 320px;
+    height: 80px;
+    left: 0px;
+    top: 10px;
+    background-color: transparent;
+    margin: 8px;
+    &:hover {
+        background-color: #919398;
+        border-radius: 8px;
+    }
+}
+
+.icon-image {
+    position: relative;
+    width: 36px;
+    height: 36px;
+
+    left: -130px;
+    top: 15px;
+
+    object-fit: cover;
+    text-align: left;
+}
+
+.title {
+    position: relative;
+    width: 200px;
+
+    left: 20px;
+
+    top: -20px;
+    text-align: left;
+
+    color: #d4d6db;
+    font-family: inherit;
+    margin-left: 8px;
+    font-size: 1.5rem;
+}
+
+.content {
+    position: relative;
+    color: #919398;
+
+    left: 20px;
+    top: -15px;
+    text-align: left;
+    width: 260px;
+    font-family: inherit;
+    font-size: 1.3rem;
+}
+
+.set-hr {
+    position: relative;
+    width: 200px;
+
+    left: 20px;
+
+    top: -35px;
+
+    background: #3e4042;
+    color: #3e4042;
+}

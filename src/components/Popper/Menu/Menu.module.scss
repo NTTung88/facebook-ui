@@ -1,89 +1,12 @@
 .menu {
     position: fixed;
-    height: 100%;
+    height: 670px;
     width: 608px;
     background-color: #323436;
     top: 50px;
     right: 50px;
     border-radius: 8px;
-}
-.header-menu {
-    padding: 16px 0;
-    font-size: 24px;
-    justify-content: left;
-}
-
-.left-content {
-    position: absolute;
-    background-color: #242526;
-    width: 350px;
-    height: 100%;
-    left: 16px;
-    border-radius: 8px;
-    margin-right: 8px;
-}
-.search {
-    position: relative;
-    top: 8px;
-    height: 36px;
-    width: 328px;
-    border-radius: 8px;
-    align-items: center;
-}
-
-.label {
-    position: absolute;
-
-    left: 16px;
-    top: 50px;
-    font-family: inherit;
-    font-size: 1.7rem;
-    font-weight: 700;
-    margin: 8px;
-    color: #e4e6eb;
-}
-
-.btn-action {
-    position: relative;
-    left: 8px;
-    top: 30px;
-    background-color: transparent;
-    margin: 8px;
-    &:hover {
-        background-color: #919398;
-        border-radius: 8px;
-    }
-}
-
-.icon-image {
-    align-items: center;
-    width: 36px;
-    height: 36px;
-    background-color: transparent;
-}
-
-.title {
-    color: #d4d6db;
-    font-family: inherit;
-    position: fixed;
-    font-size: 1.5rem;
-    padding: 8px 16px;
-}
-
-.content {
-    color: #919398;
-    font-family: inherit;
-    font-size: 1.3rem;
-    padding: 8px 16px;
-    margin: 2px;
-}
-
-.right-content {
-    position: absolute;
-    width: 210px;
-    background-color: #242526;
-
-    height: 100%;
-    border-radius: 8px;
-    right: 16px;
+    box-sizing: border-box;
+    overflow-x: hidden;
+    overflow-y: scroll;
 }
