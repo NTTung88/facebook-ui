@@ -83,12 +83,12 @@ function Header() {
 
                 <div className={cx('section3')}>
                     <Tippy className={cx('action-tippy')} delay={(0, 200)} content="Menu" placement="bottom">
-                        <button className={cx('s3-action-btn')} onClick={handleMenu}>
+                        <div className={cx('s3-action-btn')} onClick={handleMenu}>
                             <span className={cx('icon-btn')}>
                                 <MenuIcon />
                             </span>
                             {show && <Menu />}
-                        </button>
+                        </div>
                     </Tippy>
 
                     <Tippy className={cx('action-tippy')} delay={(0, 200)} content="Messages" placement="bottom">

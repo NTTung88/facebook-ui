@@ -1,6 +1,6 @@
 /* eslint-disable jsx-a11y/anchor-is-valid */
 import classNames from 'classnames/bind';
-import React from 'react';
+
 import Button from '~/components/Button';
 
 import Image from '~/components/Image';
@@ -49,6 +49,7 @@ function MenuItem() {
                     content: 'Khám phá và kết nối với các doanh nghiệp trên Facebook.',
                 },
             ],
+            foot: <hr />,
         },
         {
             topic: 'Giải trí',
@@ -89,6 +90,7 @@ function MenuItem() {
                     content: 'Mua bán trong cộng đồng của bạn',
                 },
             ],
+            foot: <hr />,
         },
         {
             topic: 'Cá nhân',
@@ -109,6 +111,7 @@ function MenuItem() {
                     content: 'Tìm bài viết, ảnh và video mà bạn đã lưu để xem sau',
                 },
             ],
+            foot: <hr />,
         },
         {
             topic: 'Chuyên nghiệp',
@@ -119,6 +122,7 @@ function MenuItem() {
                     content: 'Tạo, quản lý và theo dõi hiệu quả quảng cáo.',
                 },
             ],
+            foot: <hr />,
         },
         {
             topic: 'Nguồn lực cho cộng đồng',
@@ -149,6 +153,7 @@ function MenuItem() {
                     content: 'Quyên góp và gây quỹ cho tổ chức phi lợi nhuận và mục đích cá nhân.',
                 },
             ],
+            foot: <hr />,
         },
         {
             topic: 'Sản phẩm khác của Meta',
@@ -166,20 +171,20 @@ function MenuItem() {
             ],
         },
     ];
-    console.log({ menuItem });
+
     return menuItem.map((menu, index) => (
         <div key={index}>
             <p className={cx('label')}>{menu.topic}</p>
             {menu.children.map((item, index) => (
                 <div key={index}>
                     <Button key={index} className={cx('btn-action')}>
-                        <Image className={cx('icon-image')} src={item.imgSrc} alt="Bạn bè" />
+                        <Image className={cx('icon-image')} src={item.imgSrc} alt={item.title} />
                         <p className={cx('title')}>{item.title}</p>
                         <p className={cx('content')}>{item.content}</p>
                     </Button>
                 </div>
             ))}
-            <hr className={cx('set-hr')} />
+            {menu.foot}
         </div>
     ));
 }
