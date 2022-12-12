@@ -1,0 +1,105 @@
+.wrapper {
+    position: relative;
+    width: 345px;
+    height: 48px;
+    background-color: transparent;
+}
+
+.label {
+    padding: 12px 16px 4px;
+
+    font-size: 1.5rem;
+    font-family: inherit;
+    min-width: 0;
+    font-weight: 900;
+    display: block;
+}
+.i1 {
+    position: relative;
+
+    top: -30px;
+    left: 150px;
+}
+.i2 {
+    position: relative;
+
+    top: -62px;
+    left: 190px;
+}
+.i3 {
+    position: relative;
+
+    top: -92px;
+    left: 230px;
+}
+.i4 {
+    position: relative;
+
+    top: -122px;
+    left: 270px;
+}
+
+.btn-icon {
+    width: 32px;
+    height: 32px;
+
+    justify-content: center;
+    align-items: center;
+
+    border-radius: 50%;
+
+    &:hover {
+        background-color: #919398;
+    }
+}
+.setting {
+    position: relative;
+    top: -5px;
+    left: 5px;
+    background-image: url(https://static.xx.fbcdn.net/rsrc.php/v3/y9/r/00BaPnciOJK.png);
+    background-position: -66px -110px;
+    background-size: 190px 200px;
+    width: 20px;
+    height: 20px;
+    background-repeat: no-repeat;
+    display: inline-block;
+}
+
+.zoom {
+    position: relative;
+    top: -5px;
+    left: 5px;
+    background-image: url(https://static.xx.fbcdn.net/rsrc.php/v3/y3/r/gfe-YqX17_C.png);
+    background-position: 0px -630px;
+    background-size: 38px 754px;
+    width: 20px;
+    height: 20px;
+    background-repeat: no-repeat;
+    display: inline-block;
+}
+
+.meeting {
+    position: relative;
+    top: -5px;
+    left: 5px;
+    background-image: url(https://static.xx.fbcdn.net/rsrc.php/v3/y5/r/L2gfXlXgYJY.png);
+    background-position: 0px -196px;
+    background-size: 26px 1444px;
+    width: 20px;
+    height: 20px;
+    background-repeat: no-repeat;
+    display: inline-block;
+}
+
+.new-mess {
+    position: relative;
+    top: -8px;
+    left: 8px;
+    background-image: url(https://static.xx.fbcdn.net/rsrc.php/v3/y5/r/L2gfXlXgYJY.png);
+    background-position: 0px -1276px;
+    background-size: 26px 1444px;
+    width: 16px;
+    height: 16px;
+    background-repeat: no-repeat;
+    display: inline-block;
+}

@@ -1,0 +1,21 @@
+.wrapper {
+    position: fixed;
+    height: 670px;
+    width: 345px;
+    background-color: #323436;
+    top: 50px;
+    right: 20px;
+    border-radius: 8px;
+    box-sizing: border-box;
+    overflow-x: hidden;
+    overflow-y: scroll;
+}
+.search {
+    position: relative;
+    top: 8px;
+    left: 12px;
+    height: 36px;
+    width: 312px;
+    border-radius: 8px;
+    align-items: center;
+}

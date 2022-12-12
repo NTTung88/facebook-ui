@@ -1,5 +1,6 @@
 import classNames from 'classnames/bind';
 import { Link } from 'react-router-dom';
+
 import Tippy from '@tippyjs/react';
 import images from '~/assets/images';
 import Image from '~/components/Image';
@@ -24,13 +25,20 @@ import styles from './Header.module.scss';
 import MenuNav, { MenuNavItem } from './MenuNav';
 import Menu from '~/components/Popper/Menu';
 import { useState } from 'react';
+import Message from '~/components/Popper/Message';
 const cx = classNames.bind(styles);
 
 function Header() {
-    const [show, setShow] = useState(false);
+    const [showMenu, setShowMenu] = useState(false);
+    const [showMess, setShowMess] = useState(false);
+
     const handleMenu = () => {
-        setShow(!show);
+        setShowMenu(!showMenu);
     };
+    const handleMessage = () => {
+        setShowMess(!showMess);
+    };
+
     return (
         <header className={cx('container')}>
             <div className={cx('content')}>
@@ -87,16 +95,17 @@ function Header() {
                             <span className={cx('icon-btn')}>
                                 <MenuIcon />
                             </span>
-                            {show && <Menu />}
+                            {showMenu && <Menu />}
                         </div>
                     </Tippy>
 
                     <Tippy className={cx('action-tippy')} delay={(0, 200)} content="Messages" placement="bottom">
-                        <button className={cx('s3-action-btn')}>
+                        <div className={cx('s3-action-btn')} onClick={handleMessage}>
                             <span className={cx('icon-btn')}>
                                 <MessageIcon />
                             </span>
-                        </button>
+                            {showMess && <Message />}
+                        </div>
                     </Tippy>
                     <Tippy className={cx('action-tippy')} delay={(0, 200)} content="Notification" placement="bottom">
                         <button className={cx('s3-action-btn')}>
@@ -107,7 +116,7 @@ function Header() {
                     </Tippy>
                     <Image
                         className={cx('icon-btn')}
-                        src="https://scontent.fsgn2-6.fna.fbcdn.net/v/t39.30808-1/264828375_3019175918334968_1227467617213764545_n.jpg?stp=dst-jpg_p100x100&_nc_cat=111&ccb=1-7&_nc_sid=7206a8&_nc_ohc=7a87EUIEp0YAX-IwGoC&_nc_ad=z-m&_nc_cid=0&_nc_ht=scontent.fsgn2-6.fna&oh=00_AfAbF9k8ErtZfsCQqyf-09nH5V2QoNFsANOAWK6TOFu3Eg&oe=636F2478"
+                        src="https://scontent.fsgn13-3.fna.fbcdn.net/v/t39.30808-1/314506606_3266812486904642_2696533368744929355_n.jpg?stp=dst-jpg_p100x100&_nc_cat=102&ccb=1-7&_nc_sid=7206a8&_nc_ohc=sev-EUtxwrUAX9H9BAv&_nc_ad=z-m&_nc_cid=0&_nc_ht=scontent.fsgn13-3.fna&oh=00_AfAZPjOs4jqnnQS5GYTdciqS2XGMdJgt68E_00-VcjMO1Q&oe=639BCE6E"
                         alt="NVA"
                     />
                 </div>
