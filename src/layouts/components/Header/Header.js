@@ -24,20 +24,55 @@ import config from '~/config';
 import styles from './Header.module.scss';
 import MenuNav, { MenuNavItem } from './MenuNav';
 import Menu from '~/components/Popper/Menu';
-import { useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import Message from '~/components/Popper/Message';
+import Notification from '~/components/Popper/Notification';
 const cx = classNames.bind(styles);
 
 function Header() {
-    const [showMenu, setShowMenu] = useState(false);
-    const [showMess, setShowMess] = useState(false);
+    const [show, setShow] = useState(false);
+    const [message, setMessage] = useState(false);
+    const [notification, setNotification] = useState(false);
 
-    const handleMenu = () => {
-        setShowMenu(!showMenu);
-    };
-    const handleMessage = () => {
-        setShowMess(!showMess);
-    };
+    const refDrop = useRef(null);
+    const refDropMess = useRef(null);
+    const refDropNotification = useRef(null);
+
+    useEffect(() => {
+        function checkOutSide(e) {
+            if (refDrop.current && !refDrop.current.contains(e.target)) {
+                setShow(false);
+            }
+        }
+        document.addEventListener('click', checkOutSide);
+        return () => {
+            document.removeEventListener('click', checkOutSide);
+        };
+    }, []);
+
+    useEffect(() => {
+        function checkOutSide(e) {
+            if (refDropMess.current && !refDropMess.current.contains(e.target)) {
+                setMessage(false);
+            }
+        }
+        document.addEventListener('click', checkOutSide);
+        return () => {
+            document.removeEventListener('click', checkOutSide);
+        };
+    }, []);
+
+    useEffect(() => {
+        function checkOutSide(e) {
+            if (refDropNotification.current && !refDropNotification.current.contains(e.target)) {
+                setNotification(false);
+            }
+        }
+        document.addEventListener('click', checkOutSide);
+        return () => {
+            document.removeEventListener('click', checkOutSide);
+        };
+    }, []);
 
     return (
         <header className={cx('container')}>
@@ -90,29 +125,35 @@ function Header() {
                 </div>
 
                 <div className={cx('section3')}>
-                    <Tippy className={cx('action-tippy')} delay={(0, 200)} content="Menu" placement="bottom">
-                        <div className={cx('s3-action-btn')} onClick={handleMenu}>
+                    <div className={cx('action-tippy')} delay={(0, 200)} content="Menu" placement="bottom">
+                        <div className={cx('s3-action-btn')} onClick={() => setShow(!show)} ref={refDrop}>
                             <span className={cx('icon-btn')}>
                                 <MenuIcon />
                             </span>
-                            {showMenu && <Menu />}
+                            {show && <Menu />}
                         </div>
-                    </Tippy>
+                    </div>
 
                     <Tippy className={cx('action-tippy')} delay={(0, 200)} content="Messages" placement="bottom">
-                        <div className={cx('s3-action-btn')} onClick={handleMessage}>
+                        <div className={cx('s3-action-btn')} onClick={() => setMessage(!message)} ref={refDropMess}>
                             <span className={cx('icon-btn')}>
                                 <MessageIcon />
                             </span>
-                            {showMess && <Message />}
+                            {message && <Message />}
                         </div>
                     </Tippy>
+
                     <Tippy className={cx('action-tippy')} delay={(0, 200)} content="Notification" placement="bottom">
-                        <button className={cx('s3-action-btn')}>
+                        <div
+                            className={cx('s3-action-btn')}
+                            onClick={() => setNotification(!notification)}
+                            ref={refDropNotification}
+                        >
                             <span className={cx('icon-btn')}>
                                 <NotificationIcon />
                             </span>
-                        </button>
+                            {notification && <Notification />}
+                        </div>
                     </Tippy>
                     <Image
                         className={cx('icon-btn')}

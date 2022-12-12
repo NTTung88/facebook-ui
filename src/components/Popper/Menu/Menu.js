@@ -10,7 +10,7 @@ const cx = classNames.bind(styles);
 
 function Menu() {
     return (
-        <aside className={cx('menu')} onMouseLeave={false}>
+        <aside className={cx('menu')}>
             <div className={cx('header-menu')}>
                 <p>Menu</p>
             </div>

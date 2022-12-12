@@ -1,10 +1,18 @@
 .menu-item {
     display: flex;
+
     align-items: center;
+    justify-content: center;
+    justify-items: center;
+
+    width: 112px;
+    height: 56px;
+
+    margin: 2px;
     padding: 8px;
     font-size: 1.8rem;
     font-weight: 700;
-    border-radius: 4px;
+
     overflow: hidden;
     transition: background-color ease-in-out 200ms;
 
@@ -16,9 +24,11 @@
         .active-icon {
             display: flex;
         }
+        border-bottom: blue solid 5px;
     }
 
     &:hover {
+        border-radius: 8px;
         background: rgba(22, 24, 35, 0.03);
     }
 }
@@ -28,6 +38,7 @@
 
 .active-icon {
     display: none;
+    color: blue;
 }
 .action-tippy {
     text-align: center;
@@ -38,7 +49,7 @@
 
     font-size: 2rem;
     background-color: transparent;
-    padding: 0px 56px;
+
     cursor: pointer;
     border-radius: 10%;
     &:hover {
