@@ -27,16 +27,19 @@ import Menu from '~/components/Popper/Menu';
 import { useEffect, useRef, useState } from 'react';
 import Message from '~/components/Popper/Message';
 import Notification from '~/components/Popper/Notification';
+import SettingAccount from '~/components/Popper/SettingAccount';
 const cx = classNames.bind(styles);
 
 function Header() {
     const [show, setShow] = useState(false);
     const [message, setMessage] = useState(false);
     const [notification, setNotification] = useState(false);
+    const [account, setAccount] = useState(false);
 
     const refDrop = useRef(null);
     const refDropMess = useRef(null);
     const refDropNotification = useRef(null);
+    const refDropAccount = useRef(null);
 
     useEffect(() => {
         function checkOutSide(e) {
@@ -74,6 +77,18 @@ function Header() {
         };
     }, []);
 
+    useEffect(() => {
+        function checkOutSide(e) {
+            if (refDropAccount.current && !refDropAccount.current.contains(e.target)) {
+                setAccount(false);
+            }
+        }
+        document.addEventListener('click', checkOutSide);
+        return () => {
+            document.removeEventListener('click', checkOutSide);
+        };
+    }, []);
+
     return (
         <header className={cx('container')}>
             <div className={cx('content')}>
@@ -84,8 +99,8 @@ function Header() {
                     </Link>
 
                     {/* <Search /> */}
-                    <div className={cx('search')}>
-                        <input placeholder="Tìm kiếm trên Facebook" spellCheck={false} />
+                    <div>
+                        <input className={cx('search')} placeholder="Tìm kiếm trên Facebook" spellCheck={false} />
                     </div>
                 </div>
 
@@ -155,11 +170,14 @@ function Header() {
                             {notification && <Notification />}
                         </div>
                     </Tippy>
-                    <Image
-                        className={cx('icon-btn')}
-                        src="https://scontent.fsgn13-3.fna.fbcdn.net/v/t39.30808-1/314506606_3266812486904642_2696533368744929355_n.jpg?stp=dst-jpg_p100x100&_nc_cat=102&ccb=1-7&_nc_sid=7206a8&_nc_ohc=sev-EUtxwrUAX9H9BAv&_nc_ad=z-m&_nc_cid=0&_nc_ht=scontent.fsgn13-3.fna&oh=00_AfAZPjOs4jqnnQS5GYTdciqS2XGMdJgt68E_00-VcjMO1Q&oe=639BCE6E"
-                        alt="NVA"
-                    />
+                    <div onClick={() => setAccount(!account)} ref={refDropAccount}>
+                        <Image
+                            className={cx('icon-btn')}
+                            src="https://scontent.fsgn13-3.fna.fbcdn.net/v/t39.30808-1/314506606_3266812486904642_2696533368744929355_n.jpg?stp=dst-jpg_p100x100&_nc_cat=102&ccb=1-7&_nc_sid=7206a8&_nc_ohc=sev-EUtxwrUAX9H9BAv&_nc_ad=z-m&_nc_cid=0&_nc_ht=scontent.fsgn13-3.fna&oh=00_AfAZPjOs4jqnnQS5GYTdciqS2XGMdJgt68E_00-VcjMO1Q&oe=639BCE6E"
+                            alt="NVA"
+                        />
+                        {account && <SettingAccount />}
+                    </div>
                 </div>
             </div>
         </header>

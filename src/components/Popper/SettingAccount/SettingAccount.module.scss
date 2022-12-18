@@ -1,0 +1,158 @@
+.wrapper {
+    position: fixed;
+    top: 50px;
+    right: 30px;
+    width: 345px;
+    height: 450px;
+
+    background-color: #242526;
+    border-radius: 8px;
+    box-shadow: 1em;
+}
+.ss1 {
+    width: 312px;
+    height: 112px;
+    margin: 4px 16px 16px;
+
+    background-color: #1c1a1a;
+
+    border: #242526 solid 1px;
+    border-radius: 8px;
+    box-shadow: #242526;
+}
+.icon-btn {
+    position: relative;
+    margin: 10px 8px;
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+}
+
+.nameAccount {
+    position: relative;
+    top: -50px;
+    left: 60px;
+    font-weight: 600;
+    font-size: 17px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: #e4e6eb;
+}
+.hr {
+    position: relative;
+    top: -25px;
+    color: #3e4042;
+    margin: 0px 16px;
+}
+
+.link-profile {
+    position: relative;
+    top: -13px;
+    left: 10px;
+    font-weight: 500;
+    font-size: 15px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: #2e89ff;
+}
+.ss2 {
+    position: relative;
+    left: 8px;
+    width: 328px;
+    height: 52px;
+    padding: 0px 8px;
+    &:hover {
+        background-color: #919398;
+        border-radius: 8px;
+    }
+}
+.icon {
+    position: relative;
+    top: 8px;
+    left: 2px;
+    width: 36px;
+    height: 36px;
+
+    border-radius: 50%;
+    background-color: #3a3b3c;
+}
+.icon-setting {
+    position: relative;
+    left: 7px;
+    top: 7px;
+    background-image: url(https://static.xx.fbcdn.net/rsrc.php/v3/yh/r/jk7j9U4rVSz.png);
+    background-position: -44px -296px;
+    background-size: 74px 376px;
+    width: 20px;
+    height: 20px;
+    background-repeat: no-repeat;
+    display: inline-block;
+}
+.icon-support {
+    position: relative;
+    left: 7px;
+    top: 7px;
+    background-image: url(https://static.xx.fbcdn.net/rsrc.php/v3/yj/r/eEOLYhO4syy.png);
+    background-position: 0px -358px;
+    background-size: 42px 468px;
+    width: 20px;
+    height: 20px;
+    background-repeat: no-repeat;
+    display: inline-block;
+}
+.icon-screen {
+    position: relative;
+    left: 7px;
+    top: 7px;
+    background-image: url(https://static.xx.fbcdn.net/rsrc.php/v3/yj/r/eEOLYhO4syy.png);
+    background-position: 0px -270px;
+    background-size: 42px 468px;
+    width: 20px;
+    height: 20px;
+    background-repeat: no-repeat;
+    display: inline-block;
+}
+.icon-noti {
+    position: relative;
+    left: 7px;
+    top: 7px;
+    background-image: url(https://static.xx.fbcdn.net/rsrc.php/v3/yj/r/eEOLYhO4syy.png);
+    background-position: 0px -182px;
+    background-size: 42px 468px;
+    width: 20px;
+    height: 20px;
+    background-repeat: no-repeat;
+    display: inline-block;
+}
+.icon-logout {
+    position: relative;
+    left: 7px;
+    top: 7px;
+    background-image: url(https://static.xx.fbcdn.net/rsrc.php/v3/y9/r/A4K6vXjU6Hy.png);
+    background-position: 0px -234px;
+    background-size: 34px 484px;
+    width: 20px;
+    height: 20px;
+    background-repeat: no-repeat;
+    display: inline-block;
+}
+.title-setting {
+    position: relative;
+    left: 50px;
+    top: -25px;
+
+    font-weight: 800;
+    font-size: 15px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: #e4e6eb;
+}
+.icon-next {
+    position: relative;
+    left: 270px;
+    top: -50px;
+    background-image: url(https://static.xx.fbcdn.net/rsrc.php/v3/yh/r/jk7j9U4rVSz.png);
+    background-position: 0px -134px;
+    background-size: 74px 376px;
+    width: 24px;
+    height: 24px;
+    background-repeat: no-repeat;
+    display: inline-block;
+}

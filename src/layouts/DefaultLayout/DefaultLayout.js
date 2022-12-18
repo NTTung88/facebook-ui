@@ -1,9 +1,8 @@
 import PropTypes from 'prop-types';
 import classNames from 'classnames/bind';
 import Header from '~/layouts/components/Header';
-import Sidebar from './Sidebar';
+
 import styles from './DefaultLayout.module.scss';
-import Aside from './Aside';
 
 const cx = classNames.bind(styles);
 function DefaultLayout({ children }) {
@@ -11,9 +10,9 @@ function DefaultLayout({ children }) {
         <div className={cx('wrapper')}>
             <Header />
             <div className={cx('container')}>
-                <Sidebar />
+                {/* <HomeSideBar /> */}
                 <div className={cx('content')}>{children}</div>
-                <Aside />
+                {/* <Aside /> */}
             </div>
         </div>
     );

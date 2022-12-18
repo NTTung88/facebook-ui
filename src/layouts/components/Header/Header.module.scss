@@ -34,9 +34,13 @@
     width: 240px;
     height: 40px;
     display: flex;
-    padding: 0 5px;
+    padding: 5px 5px;
+    margin-left: 8px;
+    border-radius: 16px;
 
-    border-radius: 50%;
+    background-color: #3a3b3c;
+
+    color: white;
 }
 .section2 {
     width: 1381px;
